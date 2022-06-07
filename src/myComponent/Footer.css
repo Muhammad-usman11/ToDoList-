@@ -1,0 +1,12 @@
+.footer{
+    background-image: url("/src/assets/f.png");
+    background-size: cover;
+    height: 70vh;
+    margin-top: 100px;
+    color: white;
+}
+.footer p{
+    padding: 355px 0px 0px 940px;
+    color: rgb(147, 143, 143);
+    font-weight: bold;
+}
