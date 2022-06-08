@@ -31,7 +31,7 @@ export default function Header() {
               <a className="nav-link" href="#">
                 Pricing
               </a>
-              <a className="nav-link disabled">Disabled</a>
+              
             </div>
           </div>
         </div>
