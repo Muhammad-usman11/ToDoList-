@@ -1,15 +1,16 @@
 
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
+  
 } from "react-router-dom";
 import Header from './myComponent/Header';
 import { AddTodo } from './myComponent/AddTodo';
 
 import ToDos from './myComponent/ToDos';
+import About from './myComponent/About';
 import Footer from './myComponent/Footer';
 
 
@@ -66,24 +67,29 @@ function App() {
     <div>
     
     <Header title="To Do List"/>
-
-    <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-
-    <AddTodo addTodo={addTodo} />
-    <ToDos todos={todos} onDelete={onDelete} />
+        <Routes>
     
-    <Footer/>
+          
+          
+          <Route exact path="/" element={ 
+          
+          <Fragment>
+            <AddTodo addTodo={addTodo}/>  
+            <ToDos todos={todos} onDelete={onDelete} />
+          </Fragment> 
+          
+          } />
+          
 
+                
+          <Route  exact path="/about" element={<About/> } />  
+           
+          
+
+        </Routes>
+
+    <Footer/>
+    
 
     </div>
     </Router>

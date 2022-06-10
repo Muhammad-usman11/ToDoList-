@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            ToDoList
-          </a>
+          <Link className="navbar-brand" to="/"  >
+           {props.title}
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,15 +23,12 @@ export default function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/" > 
                 Home
-              </a>
-              <a className="nav-link" href="#">
-                Features
-              </a>
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+              </Link>
+              <Link className="nav-link" to="/about"  > 
+                About
+              </Link>
               
             </div>
           </div>
